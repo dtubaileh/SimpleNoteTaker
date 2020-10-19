@@ -1,0 +1,2 @@
+# SimpleNoteTaker
+using Redux technology 
