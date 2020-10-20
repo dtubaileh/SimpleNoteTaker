@@ -1,20 +1,3 @@
-// import React from 'react';
-// import {Provider as PaperProvider} from 'react-native-paper';
-// import AppNavigator from './src/navigation';
-// import {Provider as StoreProvider} from 'react-redux';
-// import store from './src/redux/store';
-// import {View} from 'react-native';
-// export default function App() {
-//   return (
-//     <View style={{backgroundColor: 'red'}} />
-//     // <StoreProvider store={store}>
-//     //   <PaperProvider>
-//     //     <AppNavigator />
-//     //   </PaperProvider>
-//     // </StoreProvider>
-//   );
-// }
-
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -45,56 +28,24 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import {
+  Logger,
+  DialPad,
+  RainbowContainer,
+  ContactInformation,
+  IContactInfoStyleProps,
+} from 'react-native-rainbow-module';
+
 const App: () => React$Node = () => {
   return (
-    <StoreProvider store={store}>
-      <PaperProvider>
-        <AppNavigator />
-      </PaperProvider>
-    </StoreProvider>
-    // <>
-    //   <StatusBar barStyle="dark-content" />
-    //   <SafeAreaView>
-    //     <ScrollView
-    //       contentInsetAdjustmentBehavior="automatic"
-    //       style={styles.scrollView}>
-    //       <Header />
-    //       {global.HermesInternal == null ? null : (
-    //         <View style={styles.engine}>
-    //           <Text style={styles.footer}>Engine: Hermes</Text>
-    //         </View>
-    //       )}
-    //       <View style={styles.body}>
-    //         <View style={styles.sectionContainer}>
-    //           <Text style={styles.sectionTitle}>Step One</Text>
-    //           <Text style={styles.sectionDescription}>
-    //             Edit <Text style={styles.highlight}>App.js</Text> to change this
-    //             screen and then come back to see your edits.
-    //           </Text>
-    //         </View>
-    //         <View style={styles.sectionContainer}>
-    //           <Text style={styles.sectionTitle}>See Your Changes</Text>
-    //           <Text style={styles.sectionDescription}>
-    //             <ReloadInstructions />
-    //           </Text>
-    //         </View>
-    //         <View style={styles.sectionContainer}>
-    //           <Text style={styles.sectionTitle}>Debug</Text>
-    //           <Text style={styles.sectionDescription}>
-    //             <DebugInstructions />
-    //           </Text>
-    //         </View>
-    //         <View style={styles.sectionContainer}>
-    //           <Text style={styles.sectionTitle}>Learn More</Text>
-    //           <Text style={styles.sectionDescription}>
-    //             Read the docs to discover what to do next:
-    //           </Text>
-    //         </View>
-    //         <LearnMoreLinks />
-    //       </View>
-    //     </ScrollView>
-    //   </SafeAreaView>
-    // </>
+    <RainbowContainer>
+      <DialPad showCallButton={true} />
+      <StoreProvider store={store}>
+        <PaperProvider>
+          <AppNavigator />
+        </PaperProvider>
+      </StoreProvider>
+    </RainbowContainer>
   );
 };
 
