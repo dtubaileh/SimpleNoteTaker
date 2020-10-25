@@ -36,16 +36,25 @@ import {
   IContactInfoStyleProps,
 } from 'react-native-rainbow-module';
 
+import {MovieProvider} from './Contex/MovieContex';
+import {MovieList} from './Contex/MovieList';
+
 const App: () => React$Node = () => {
   return (
-    <RainbowContainer>
-      <DialPad showCallButton={true} />
+    // <RainbowContainer>
+    //   <DialPad showCallButton={true} />
+    <MovieProvider>
       <StoreProvider store={store}>
-        <PaperProvider>
-          <AppNavigator />
-        </PaperProvider>
+        {/* <PaperProvider> */}
+
+        <MovieList />
+
+        <AppNavigator />
+
+        {/* </PaperProvider> */}
       </StoreProvider>
-    </RainbowContainer>
+    </MovieProvider>
+    // </RainbowContainer>
   );
 };
 
